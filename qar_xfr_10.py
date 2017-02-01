@@ -12,12 +12,10 @@
 import sys
 import logging
 import win32api
-
 #==============================================================================
 # read pcmcia card label windows api
 #==============================================================================
 card_label = win32api.GetVolumeInformation("H:\\")
-
 #==============================================================================
 # who is transferring the files
 #==============================================================================
@@ -144,8 +142,6 @@ def fetchFiles(pathToFolder, flag, keyWord):
         global str7
         str7 = str6.__add__(str5)
        
-            
-        
         print 'Number of .FLD files found on the card:', len(_fileNames)
         print
 fetchFiles('H://','ENDS_WITH','.FLD')
@@ -219,14 +215,11 @@ for root, dirs, files in os.walk(sourcePath):
                 print 'file "' + f + '" already exists'
 
 #==============================================================================
-# #==============================================================================
-# # Reset back the stream to what it was
-# #==============================================================================
+# Reset back the stream to what it was
+#==============================================================================
 # sys.stdout = save_out
 # fsock.close()
-# 
-#==============================================================================
-#==============================================================================
+#================================================================================
 # compare files
 #==============================================================================
 from filecmp import dircmp
@@ -266,7 +259,7 @@ import shutil
 filelist = [ f for f in os.listdir(r"H:\\")]
 #file_list = 0
 if not filelist:
-    print "There were no files/Folders to delete"
+	print "There were no files/Folders to delete"
     print 'Deleted number of files = :', 0
 file_count = 0
 for f in filelist:
